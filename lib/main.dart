@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Flutter BLoC App',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: Colors.deepPurple,
         ),
         home: const MyHomePage(title: 'Flutter Bloc App'),
       ),
@@ -47,6 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
             const Text(
               'You have pushed the button this many times:',
             ),
+            // BlocBuilder - Re-builds the UI for every new state coming from the bloc.
             BlocBuilder<CounterCubit, CounterState>(
               builder: (context, state) {
                 return Text(
@@ -60,6 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 FloatingActionButton(
                   onPressed: () {
+                    // BlocProvider - Creates & Provides the only instance of a bloc to the subtree.
                     BlocProvider.of<CounterCubit>(context).decreament();
                     // context.bloc<CounterCubit>().decreament();
                   },
@@ -69,6 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 FloatingActionButton(
                   onPressed: () {
                     BlocProvider.of<CounterCubit>(context).increament();
+                    // context.bloc<CounterCubit>().increament();
                   },
                   tooltip: 'Increament',
                   child: const Icon(Icons.add),
