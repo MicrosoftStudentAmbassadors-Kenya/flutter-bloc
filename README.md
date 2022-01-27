@@ -1,7 +1,9 @@
 # blocapp
 
-A new Flutter project, that delves deeper in to working BLoC as a state management tool.
-Backed by Google and Felix Angelov this amazing tool has a lot to help build amazing apps.
+A Fluuter application that uses the Bloc architecture. This application will help us understand what Bloc is:
+1. A Design Pattern.
+1. A State Management Library.
+1. An Architectural Pattern.
 
 
 ## Required-ish.
