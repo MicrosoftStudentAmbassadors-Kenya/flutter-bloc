@@ -20,8 +20,14 @@ What is assumed before engagingwith this repository is:
 
 # Architecture Definition.
 
+![Bloc Architecture Definition](https://user-images.githubusercontent.com/46367331/151333886-8fa43ca2-d53f-4733-8778-bba919828f18.png)
 
-## Data Layer
+
+## Data Layer.
+
+![Data Layer Representation](https://user-images.githubusercontent.com/46367331/151333995-bc1c3623-8182-4edc-8362-a9d96f5336f7.png)
+
+
 Where do I start now that I know how to code?
 
 By coding your models:
