@@ -14,7 +14,8 @@ What is assumed before engagingwith this repository is:
 1. A Desire to achieve more ;)
 
 
-# What is BLoC? [https://pub.dev/packages/bloc]
+# What is BLoC? 
+- [Reference Material](https://pub.dev/packages/bloc) - Bloc Docs. 
 
 * A predictable state management library that helps implement the BLoC (Business Logic Component) design pattern.
 
