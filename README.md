@@ -97,6 +97,8 @@ Optional listenWhen fn as optional buildWhen for BlocBuilder. Similar structure 
 
 As our app grows so do our Blocs, so hoow do we keep track of all the Blocs in our app, we use MultiBlocProvider, MultiBlocListener and MultiRepositoryProvider to pass our Blocs respectively.
 
+The BuildContext doesn't know where to provide the existing unique instance of the bloc/cubit. Local Access means providing an instance of a bloc/cubit to a single screen (to its entire widget tree.)
+
 # Why would you use `bloc` instead of `cubit`?
 1. Bloc not only emits a stream of states but also receives a stream of events, unlike cubit which only receives a set of pre-baked fns.
 
