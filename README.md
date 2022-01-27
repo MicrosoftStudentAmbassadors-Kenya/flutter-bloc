@@ -121,13 +121,50 @@ The BuildContext doesn't know where to provide the existing unique instance of t
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is a starting point for a Flutter application using Bloc, as a Design Pattern, State management library.
 
-A few resources to get you started if this is your first Flutter project:
+Before cloning the app ensure you have Flutter `2.8.1^` and above installed.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+### File Structure (lib).
+```
+.
+├── logic
+│   └── cubit
+|       ├── counter_cubit.dart
+│       └── counter_state.dart
+├── presentation
+│   └── screens
+|       ├── home_screen.dart
+│       └── second_screen.dart
+├── test
+│   └── counter_cubit_test.dart
+└── main.dart
+```
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Clone the app by running:
+
+```sh
+
+git clone git@github.com:MicrosoftStudentAmbassadors-Kenya/flutter-bloc.git
+
+cd flutter-bloc
+
+flutter pub get
+
+```
+
+1. After getting all the required packages you can run the tests by running:
+
+```sh
+
+flutter test
+
+```
+
+1. Run the application by running:
+
+```sh
+
+flutter run -d linux
+
+```
