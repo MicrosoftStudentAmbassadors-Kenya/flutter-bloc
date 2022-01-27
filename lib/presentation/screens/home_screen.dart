@@ -19,6 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: widget.color,
         title: Text(widget.title),
       ),
       body: Center(
@@ -58,19 +59,27 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 FloatingActionButton(
                   heroTag: const Text('Decreament'),
+                  hoverColor: widget.color,
                   onPressed: () {
                     BlocProvider.of<CounterCubit>(context).decreament();
                   },
                   tooltip: 'Decreament',
-                  child: const Icon(Icons.exposure_minus_1),
+                  child: Icon(
+                    Icons.exposure_minus_1,
+                    color: widget.color,
+                  ),
                 ),
                 FloatingActionButton(
                   heroTag: const Text('Increament'),
+                  hoverColor: widget.color,
                   onPressed: () {
                     BlocProvider.of<CounterCubit>(context).increament();
                   },
                   tooltip: 'Increament',
-                  child: const Icon(Icons.add),
+                  child: Icon(
+                    Icons.add,
+                    color: widget.color,
+                  ),
                 ),
               ],
             ),
@@ -80,16 +89,19 @@ class _HomeScreenState extends State<HomeScreen> {
             MaterialButton(
               color: widget.color,
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (_context) => BlocProvider.value(
-                          value: BlocProvider.of<CounterCubit>(context),
-                          child: const SecondScreen(
-                            title: 'Second Screen',
-                            color: Colors.red,
-                          ),
-                        )));
+                Navigator.of(context).pushNamed('/second');
               },
               child: const Text('Go to second screen.'),
+            ),
+            const SizedBox(
+              height: 24,
+            ),
+            MaterialButton(
+              color: widget.color,
+              onPressed: () {
+                Navigator.of(context).pushNamed('/third');
+              },
+              child: const Text('Go to third screen.'),
             ),
           ],
         ),

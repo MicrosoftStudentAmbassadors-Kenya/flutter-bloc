@@ -18,6 +18,7 @@ class _SecondScreenState extends State<SecondScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: widget.color,
         title: Text(widget.title),
       ),
       body: Center(
@@ -57,19 +58,27 @@ class _SecondScreenState extends State<SecondScreen> {
               children: [
                 FloatingActionButton(
                   heroTag: const Text('Decreament'),
+                  hoverColor: widget.color,
                   onPressed: () {
                     BlocProvider.of<CounterCubit>(context).decreament();
                   },
                   tooltip: 'Decreament',
-                  child: const Icon(Icons.exposure_minus_1),
+                  child: Icon(
+                    Icons.exposure_minus_1,
+                    color: widget.color,
+                  ),
                 ),
                 FloatingActionButton(
                   heroTag: const Text('Increament'),
+                  hoverColor: widget.color,
                   onPressed: () {
                     BlocProvider.of<CounterCubit>(context).increament();
                   },
                   tooltip: 'Increament',
-                  child: const Icon(Icons.add),
+                  child: Icon(
+                    Icons.add,
+                    color: widget.color,
+                  ),
                 ),
               ],
             ),
