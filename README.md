@@ -9,9 +9,9 @@ A Flutter application that uses the Bloc architecture. This application will hel
 
 What is assumed before engagingwith this repository is:
 
+1. Understanding of Dart, null safety and types.
 1. Some practical knowledge in Flutter is really handy in understanding how this will help in building your apps.
 1. Understanding the tree structure of widgets in Flutter.
-1. Understanding of Dart, null safety and types.
 1. A Desire to achieve more ;)
 
 
@@ -47,6 +47,12 @@ Here data can be fine-tuned before sending it to the Business Logic Layer.
 
 * Final layer where the user gets the presented data, is the User Interface, has widgets, user inputs, lifecycle events, animations etc.
 Its responsible of `rendering itself`, based on one or more bloc states.
+
+
+# Testing.
+
+* `CODE is CODE and CODE will BREAK!`
+Testing helps pre-empt some errors that might be a problem.
 
  
 # What is BLoC? 
