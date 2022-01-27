@@ -21,8 +21,9 @@ What is assumed before engagingwith this repository is:
 
 
 ## Data Layer.
+![Data Layer Representation](https://user-images.githubusercontent.com/46367331/151334561-146181d1-0b91-46d5-9fd3-74203ff4a91d.png)
 
-![Data Layer Representation](https://user-images.githubusercontent.com/46367331/151333995-bc1c3623-8182-4edc-8362-a9d96f5336f7.png)
+![Data Request-Response Representation](https://user-images.githubusercontent.com/46367331/151333995-bc1c3623-8182-4edc-8362-a9d96f5336f7.png)
 
 
 Where do I start now that I know how to code?
