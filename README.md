@@ -62,7 +62,16 @@ Testing helps pre-empt some errors that might be a problem.
 
 ![Anonymous Routing](https://user-images.githubusercontent.com/46367331/151413566-bbd8c587-14b8-4ee7-a523-2de9615654b4.png)
 
- 
+## Named Routing.
+
+* Why use `Named Routing`?
+![Named Routing Benefits](https://user-images.githubusercontent.com/46367331/151414354-dfc90a72-1334-41c7-8bc5-a1666f549837.png)
+
+
+
+![Named Routing Example](https://user-images.githubusercontent.com/46367331/151414294-e4b09257-7666-4a3e-9478-4d0ed2340bc0.png)
+
+
 # What is BLoC? 
 - [Reference Material](https://pub.dev/packages/bloc) - Bloc Docs. 
 
