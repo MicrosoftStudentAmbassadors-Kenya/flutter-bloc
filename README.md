@@ -135,7 +135,8 @@ Before cloning the app ensure you have Flutter `2.8.1^` and above installed.
 ├── presentation
 │   └── screens
 |       ├── home_screen.dart
-│       └── second_screen.dart
+│       ├── second_screen.dart
+│       └── third_screen.dart
 ├── test
 │   └── counter_cubit_test.dart
 └── main.dart
