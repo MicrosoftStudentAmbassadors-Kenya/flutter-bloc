@@ -21,6 +21,11 @@ What is assumed before engagingwith this repository is:
 
 This design pattern helps to separate presentation from business logic. Following the BLoC pattern facilitates testability and reusability. This package abstracts reactive aspects of the pattern allowing developers to focus on writing the business logic.
 
+![Cubit Image Description](https://user-images.githubusercontent.com/46367331/151330546-1eb92ef1-9c97-40f2-8acb-12a3b8df4106.png)
+
+![Bloc Image Description](https://user-images.githubusercontent.com/46367331/151330721-b6a23b06-cfcd-4167-9c0a-00c6d47f1054.png)
+
+
 ## BLoC Terminologies.
 
 | Keyword | README |
@@ -36,7 +41,13 @@ This design pattern helps to separate presentation from business logic. Followin
 
 * `cubit` - This is a special kind of stream component, based on fn called from the UI, (not part of a stream) that rebuild the UI, by emitting different states on a stream. As compared to bloc, the cubit fns are not part of a stream, rather a simple pre-baked list of what a cubit can do. It is a subset of Bloc, where it Bloc extends Cubit.
 
+![Cubit Function Description](https://user-images.githubusercontent.com/46367331/151330882-ab2004fa-1eb8-4930-a4b3-9a34e948bb77.png)
+
+
 * `bloc` - An advanced class which relies on events to trigger state changes rather than functions. However, rather than calling a function on a Bloc and directly emitting a new state, Blocs receive events and convert the incoming events into outgoing states. Bloc also extends BlocBase which means it has a similar public API as Cubit.
+
+![Bloc Funcion Description](https://user-images.githubusercontent.com/46367331/151331000-4da1d89b-5408-46fc-b96f-8fd9bc363ced.png)
+
 
 * `BlocBuilder` - Re-builds the UI for every new state coming from the bloc. This means the builder fn may be called multiple times per state due to how Flutter Engine works.
 
