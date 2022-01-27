@@ -5,6 +5,8 @@ A Fluuter application that uses the Bloc architecture. This application will hel
 1. A State Management Library.
 1. An Architectural Pattern.
 
+![Bloc Architecture Definition](https://user-images.githubusercontent.com/46367331/151332504-5e99bd55-aec1-41eb-9676-dfff233319ce.png)
+
 
 ## Required-ish.
 
