@@ -125,7 +125,7 @@ This project is a starting point for a Flutter application using Bloc, as a Desi
 
 Before cloning the app ensure you have Flutter `2.8.1^` and above installed.
 
-### File Structure (lib).
+### File Structure.
 ```
 .
 ├── logic
