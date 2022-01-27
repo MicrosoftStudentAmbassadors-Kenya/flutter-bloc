@@ -54,6 +54,14 @@ Its responsible of `rendering itself`, based on one or more bloc states.
 * `CODE is CODE and CODE will BREAK!`
 Testing helps pre-empt some errors that might be a problem.
 
+# Routing.
+
+![Types of Routing in Flutter](https://user-images.githubusercontent.com/46367331/151413441-055a05d0-4318-4b19-9d96-1f915f5b41d4.png)
+
+## Anonymous Routing.
+
+![Anonymous Routing](https://user-images.githubusercontent.com/46367331/151413566-bbd8c587-14b8-4ee7-a523-2de9615654b4.png)
+
  
 # What is BLoC? 
 - [Reference Material](https://pub.dev/packages/bloc) - Bloc Docs. 
