@@ -20,17 +20,34 @@ What is assumed before engagingwith this repository is:
 ![Bloc Architecture Definition](https://user-images.githubusercontent.com/46367331/151333886-8fa43ca2-d53f-4733-8778-bba919828f18.png)
 
 
+### Where do I start now that I know how to code?
+
+Typically, one begins at the data layer, where you start by defining your universal abstract models, your data provider, and your repositories.
+
 ## Data Layer.
 ![Data Layer Representation](https://user-images.githubusercontent.com/46367331/151334561-146181d1-0b91-46d5-9fd3-74203ff4a91d.png)
 
+1. A `model` is a blueprint to the data your application will work with.
+
+1. A `data provider` is typically an API for your app, typically a class with different methods that serve as a communication with external data sources.
+
+1. A `repository` is where we we will have our Model classes instantiated as objects. It is a wrapper around more than one data providers.
+Here data can be fine-tuned before sending it to the Business Logic Layer.
+
 ![Data Request-Response Representation](https://user-images.githubusercontent.com/46367331/151333995-bc1c3623-8182-4edc-8362-a9d96f5336f7.png)
 
+## Business Logic Layer.
+* The Business Logic Area is where all the Blocs and Cubits will be created and reside. Its main responsibility is to respond to the user input from the presentation layer with new emitted states.
 
-Where do I start now that I know how to code?
+* As the mediator between the Presentation Layer and the Data Layer, this is the last layer that can intercept and catch any errorsfrom within the data layer and protect the app from crashing.
 
-By coding your models:
+* It is worth noting that blocs and cubits can communicate with one another, such as a bloc for listening whether an internet connection is present, this will have to be overridden by .close() methos to avoid leaks, but will tell other blocs, "hey guys no internet" state.
 
-* A `model` is a blueprint to the data your application will work with.
+## Presentation Layer.
+
+* Final layer where the user gets the presented data, is the User Interface, has widgets, user inputs, lifecycle events, animations etc.
+Its responsible of `rendering itself`, based on one or more bloc states.
+
  
 # What is BLoC? 
 - [Reference Material](https://pub.dev/packages/bloc) - Bloc Docs. 
