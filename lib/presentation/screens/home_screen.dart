@@ -34,14 +34,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
                       content: Text('Increamented'),
-                      duration: Duration(milliseconds: 300),
+                      duration: Duration(milliseconds: 150),
                     ),
                   );
                 } else if (state.wasIncreament == false) {
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
                       content: Text('Decreamented'),
-                      duration: Duration(milliseconds: 300),
+                      duration: Duration(milliseconds: 150),
                     ),
                   );
                 }
