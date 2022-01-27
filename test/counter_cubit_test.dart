@@ -1,5 +1,5 @@
 import 'package:bloc_test/bloc_test.dart';
-import 'package:blocapp/cubit/counter_cubit.dart';
+import 'package:blocapp/logic/cubit/counter_cubit.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 // Feature Tests.
