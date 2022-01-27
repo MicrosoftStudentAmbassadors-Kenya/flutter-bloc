@@ -1,12 +1,9 @@
 # blocapp
 
-A Fluuter application that uses the Bloc architecture. This application will help us understand what Bloc is:
+A Flutter application that uses the Bloc architecture. This application will help us understand why Bloc is:
 1. A Design Pattern.
 1. A State Management Library.
 1. An Architectural Pattern.
-
-![Bloc Architecture Definition](https://user-images.githubusercontent.com/46367331/151332504-5e99bd55-aec1-41eb-9676-dfff233319ce.png)
-
 
 ## Required-ish.
 
