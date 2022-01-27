@@ -27,6 +27,7 @@ class _MyAppState extends State<MyApp> {
       title: 'Flutter BLoC App',
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       routes: {
         '/': (context) => BlocProvider.value(
