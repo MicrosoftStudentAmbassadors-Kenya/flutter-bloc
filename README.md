@@ -18,6 +18,16 @@ What is assumed before engagingwith this repository is:
 1. A Desire to achieve more ;)
 
 
+# Architecture Definition.
+
+
+## Data Layer
+Where do I start now that I know how to code?
+
+By coding your models:
+
+* A `model` is a blueprint to the data your application will work with.
+ 
 # What is BLoC? 
 - [Reference Material](https://pub.dev/packages/bloc) - Bloc Docs. 
 
