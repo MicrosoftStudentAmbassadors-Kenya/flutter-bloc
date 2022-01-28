@@ -56,6 +56,27 @@ Testing helps pre-empt some errors that might be a problem.
 
 # Routing.
 
+Navigation within Flutter apps can be configured to use either:
+
+1. `Anonymous Routing` - which is recommended for `SMALL` projects.
+
+1. `Named Routing` - Recommended for `MEDIUM` projects.
+
+1. `Generated Routing` - Recommended for `LARGE` projects.
+
+The GOAL is to `provide a unique instance of a bloc/cubit, meaning there shouldn't be MULTIPLE instances of the same bloc/cubit` within your app.
+
+It is worth noting that `BlocProvider` - creates a new instance of a bloc/cubit, and `BlocProvider.value()` takes an already created instance then provides it further in the subtree.
+
+### How to provision bloc/cubit instances.
+
+a. `Locally` - This is when you want to provide the instance to a single screen.
+
+b. `Specifically` - When you want to specifically provide an instance across one or more screens.
+
+c. `Globally` - When you want to provide an instance across all your screens.
+
+
 ![Types of Routing in Flutter](https://user-images.githubusercontent.com/46367331/151413441-055a05d0-4318-4b19-9d96-1f915f5b41d4.png)
 
 ## Anonymous Routing.
@@ -68,9 +89,14 @@ Testing helps pre-empt some errors that might be a problem.
 ![Named Routing Benefits](https://user-images.githubusercontent.com/46367331/151414354-dfc90a72-1334-41c7-8bc5-a1666f549837.png)
 
 
-
 ![Named Routing Example](https://user-images.githubusercontent.com/46367331/151414294-e4b09257-7666-4a3e-9478-4d0ed2340bc0.png)
 
+
+## Generated Routing.
+
+* This Route Access Method is similar to `Named Routing`, thus sharing some advantages. 
+* Though similar, there are some differences such as `Generated Route - Integrates the entire navigation feature inside one file and function.`
+* This declutters the main.dart file, destructuring the code, making it more maintainable and easier to understand and navigate.
 
 # What is BLoC? 
 - [Reference Material](https://pub.dev/packages/bloc) - Bloc Docs. 
@@ -119,7 +145,7 @@ The BuildContext doesn't know where to provide the existing unique instance of t
 # Why would you use `bloc` instead of `cubit`?
 1. Bloc not only emits a stream of states but also receives a stream of events, unlike cubit which only receives a set of pre-baked fns.
 
-## Getting Started
+ # Getting Started
 
 This project is a starting point for a Flutter application using Bloc, as a Design Pattern, State management library.
 
