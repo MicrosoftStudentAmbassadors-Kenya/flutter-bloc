@@ -64,7 +64,7 @@ class _SecondScreenState extends State<SecondScreen> {
                   },
                   tooltip: 'Decreament',
                   child: Icon(
-                    Icons.exposure_minus_1,
+                    Icons.remove,
                     color: widget.color,
                   ),
                 ),
@@ -79,6 +79,19 @@ class _SecondScreenState extends State<SecondScreen> {
                     Icons.add,
                     color: widget.color,
                   ),
+                ),
+                const SizedBox(
+                  height: 24,
+                ),
+                MaterialButton(
+                  color: Colors.greenAccent,
+                  child: const Text(
+                    'Go to Third Screen',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/third');
+                  },
                 ),
               ],
             ),
