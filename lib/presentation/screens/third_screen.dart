@@ -60,11 +60,11 @@ class _ThirdScreenState extends State<ThirdScreen> {
                   heroTag: const Text('Decreament'),
                   hoverColor: widget.color,
                   onPressed: () {
-                    BlocProvider.of<CounterCubit>(context).decreament();
+                    context.read<CounterCubit>().decreament();
                   },
                   tooltip: 'Decreament',
                   child: Icon(
-                    Icons.exposure_minus_1,
+                    Icons.remove,
                     color: widget.color,
                   ),
                 ),
