@@ -5,6 +5,23 @@ A Flutter application that uses the Bloc architecture. This application will hel
 1. A State Management Library.
 1. An Architectural Pattern.
 
+### File Structure.
+```
+.
+├── logic
+│   └── cubit
+|       ├── counter_cubit.dart
+│       └── counter_state.dart
+├── presentation
+│   └── screens
+|       ├── home_screen.dart
+│       ├── second_screen.dart
+│       └── third_screen.dart
+├── test
+│   └── counter_cubit_test.dart
+└── main.dart
+```
+
 ## Required-ish.
 
 What is assumed before engagingwith this repository is:
@@ -140,7 +157,13 @@ Optional listenWhen fn as optional buildWhen for BlocBuilder. Similar structure 
 
 As our app grows so do our Blocs, so hoow do we keep track of all the Blocs in our app, we use MultiBlocProvider, MultiBlocListener and MultiRepositoryProvider to pass our Blocs respectively.
 
-The BuildContext doesn't know where to provide the existing unique instance of the bloc/cubit. Local Access means providing an instance of a bloc/cubit to a single screen (to its entire widget tree.)
+
+<!-- TO-DO: ADD IMAGE MultiBlocProvider. -->
+
+
+### Why not just use the BuildContext?
+
+* The BuildContext doesn't know where to provide the existing unique instance of the bloc/cubit. Local Access means providing an instance of a bloc/cubit to a single screen (to its entire widget tree.)
 
 # Why would you use `bloc` instead of `cubit`?
 1. Bloc not only emits a stream of states but also receives a stream of events, unlike cubit which only receives a set of pre-baked fns.
@@ -150,23 +173,6 @@ The BuildContext doesn't know where to provide the existing unique instance of t
 This project is a starting point for a Flutter application using Bloc, as a Design Pattern, State management library.
 
 Before cloning the app ensure you have Flutter `2.8.1^` and above installed.
-
-### File Structure.
-```
-.
-├── logic
-│   └── cubit
-|       ├── counter_cubit.dart
-│       └── counter_state.dart
-├── presentation
-│   └── screens
-|       ├── home_screen.dart
-│       ├── second_screen.dart
-│       └── third_screen.dart
-├── test
-│   └── counter_cubit_test.dart
-└── main.dart
-```
 
 1. Clone the app by running:
 
@@ -195,3 +201,124 @@ flutter test
 flutter run -d linux
 
 ```
+
+# BuildContext in Flutter.
+
+* Be able to understand & tackle different scenarios to see how `BuildContext` can cause the unwanted BlocProvider.of() fails to find a context containing a specific bloc/cubit.
+
+- Remember everything in Flutter is a widget and that Flutter uses a `widget tree`, to organize & structure the widgets you've set up in your application.
+
+## But how is a widget restructured?
+
+* You guessed it `BuildContext`. So what is it?
+
+- It is somewhat a tool which helps handle the location of a widget inside the widget.
+
+* So you're saying every widget is built within a context, right ? Absolutely correct. But not all widget have a user accessible context.
+
+- For instance a Text(widget), will be built within a context, but that context will be anonymous.
+
+
+## Let's restructure our thinking.
+
+* Here are some `completely wrong assumptions` you might have made during the development of your app.
+
+1. That since (in the example below), the context(1) is the same, as context(2), and is the same as context(3), since they have the same name.
+
+
+```sh
+
+@override
+  Widget build(BuildContext context(1)) {
+    return MultiBlocProvider(
+        providers: [
+            BlocProvider<InternetCubit>(
+                create (context(2)) => InternetCubit(connectivity: connectivity),
+            ),
+            BlocProvider<CounterCubit>(
+                create (context(2)) => CounterCubit(),
+            ),
+        ]
+    )
+  }
+}
+
+```
+
+* It is key to understand that `context`, in each case (context(2) & context(3)) is the name of a BuildContext instance, which is passed as an argument to different functions. THis means there will be different values passed as argument(s), even though the name is the same.
+
+* This means that we can imagine the name context as being the BuildContext in which the current widget is being created. This means the following app will run just fine, which is recommended practice in developing your apps.
+
+
+```sh
+
+@override
+  Widget build(BuildContext myAppContext) {
+    return MultiBlocProvider(
+        providers: [
+            BlocProvider<InternetCubit>(
+                create (internetCubitCOntext) => InternetCubit(connectivity: connectivity),
+            ),
+            BlocProvider<CounterCubit>(
+                create (counterCubitContext) => CounterCubit(),
+            ),
+        ]
+    )
+  }
+}
+
+```
+---------------------------------------------------------------
+
+2. That if there is no context instance passed to a widget, then it isn't built within a BuildContext.
+
+
+```sh
+
+MaterialButton(
+    color: widget.color,
+    onPressed: () {
+        Navigator.of(context).pushNamed('/second');
+    },
+    child: const Text('Go to second screen.'),
+),
+
+```
+
+* It is worth noting that every widget in FLutter has a BuildContext. Some like the above may not be outwardly called in a fn but exist. Within every widget there is a BuildContext and will be placed correctly inside the widget tree.
+
+
+
+
+---------------------------------------------------------------
+
+3. That if the context in which the next child will built, won't be related to the parent context inside the widget tree.
+
+
+<!-- TO-DO: ADD IMAGE. -->
+
+
+* It is essential to know that the BuildContext of a widget keeps track only of its direct parent and nothing else.
+
+
+<!-- TO-DO: ADD IMAGE. -->
+
+
+* The relationship between BuildContexts is a `Bottom-up` relationship, since the only way a widget can know what's at the top of the tree is to start from the bottom child and work its way up asking at each step for every parent that is above, until it reaches the top.
+
+* BuildContext only cares about its parent context. It doesn't hold or record any information about its child or children. THis helps us understand that the only way you can move inside a widget tree, is by choosing the context and navigating up.
+
+
+---------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
