@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:blocapp/logic/cubit/counter_cubit.dart';
 import 'package:blocapp/presentation/screens/home_screen.dart';
 import 'package:blocapp/presentation/screens/second_screen.dart';
